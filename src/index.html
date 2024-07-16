@@ -3,12 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <!-- PON UN FAVICON!!! -->
-    <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="icon" type="image/svg+xml"
+      href="./assets/images/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet">
+
     <!-- CAMBIA EL TITLE!!! -->
     <title>Vite Template</title>
   </head>
   <body>
+    <main class="main">
+      <div class="card">
+        <div class="card__span">
+          <span class="card__span--id">ADVICE
+            #<span id="span-id"></span></span>
+          <span id="span-text" class="card__span--text"></span>
+        </div>
+
+        <div class="card__separator">
+          <img src="./assets/images/pattern-divider-mobile.svg" alt>
+        </div>
+
+        <div id="button-generator" class="card__generator">
+          <img src="./assets/images/icon-dice.svg" alt>
+        </div>
+      </div>
+    </main>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

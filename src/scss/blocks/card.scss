@@ -1,0 +1,73 @@
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 343px;
+  height: 315px;
+  background-color: #313a48;
+  border-radius: 10px;
+  @include responsive(desktop) {
+    width: 540px;
+    height: 332px;
+  }
+
+  &__span {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+    margin-inline: 24px;
+    text-align: center;
+    padding-bottom: 24px;
+
+    @include responsive(desktop) {
+      padding-bottom: 48px;
+      margin-inline: 48px;
+    }
+
+    &--id {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 3.46px;
+      line-height: auto;
+      color: #53ffaa;
+    }
+
+    &--text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -0.26px;
+      line-height: auto;
+      color: #cee3e9;
+    }
+  }
+
+  &__separator {
+    margin-inline: 24px;
+    @include responsive(desktop) {
+      margin-inline: 40px;
+    }
+  }
+
+  &__generator {
+    position: absolute;
+    bottom: 0;
+    translate: 0 50%;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #53ffaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover {
+      box-shadow: 0px 0px 40px #53ffaa;
+    }
+  }
+}
