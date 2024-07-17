@@ -1,21 +1,27 @@
-// El styles lo importamos aquí, ya se carga después al compilar todo
 import '../scss/styles.scss';
 
 const generatorElement = document.getElementById('button-generator');
 const idElement = document.getElementById('span-id');
 const textElement = document.getElementById('span-text');
 
-const generateTextFunction = async url => {
+const printAdvice = (id, advice) => {
+  idElement.textContent = id;
+  textElement.textContent = advice;
+};
+
+const getAdvice = async () => {
   try {
-    const response = await fetch(url);
+    const response = await fetch('https://api.adviceslip.com/advice');
     const data = await response.json();
-    idElement.textContent = data.slip.id;
-    textElement.textContent = `"${data.slip.advice}"`;
+    const id = data.slip.id;
+    const advice = data.slip.advice;
+
+    printAdvice(id, advice);
   } catch (error) {
     console.log(error);
   }
 };
 
-generateTextFunction('https://api.adviceslip.com/advice');
+getAdvice();
 
-generatorElement.addEventListener('click', () => generateTextFunction('https://api.adviceslip.com/advice'));
+generatorElement.addEventListener('click', getAdvice);
